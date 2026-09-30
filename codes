@@ -1,0 +1,5 @@
+Run Rasa (fow web)
+    > rasa run -m models --enable-api --cors "*" --debug
+
+Run rasa (for cli)
+    > rasa shell

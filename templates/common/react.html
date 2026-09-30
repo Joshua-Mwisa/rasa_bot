@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <!--    <meta charset="UTF-8">-->
+    <title>Rasa Bot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@scalableminds/chatroom@latest/dist/Chatroom.css"/>
+</head>
+home
+<body>
+<div class="chat-container"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@scalableminds/chatroom@latest/dist/Chatroom.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const chatroom = new window.Chatroom({
+        host: "http://127.0.0.1:5005",
+        title: "Chat with Lisa",
+        container: document.querySelector(".chat-container"),
+        welcomeMessage: "Hi, I am Lisa. How may I help you?",
+        speechRecognition: "en-US",
+        voiceLang: "en-US",
+      });
+      chatroom.openChat();
+    });
+</script>
+
+</body>
+</html>

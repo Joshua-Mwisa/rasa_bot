@@ -1,0 +1,241 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="px-md-4">
+    <div class="container">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h2><strong> About</strong></h2>
+        </div>
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
+                        Item #1
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Cloud Storage</strong> is a way to store digital data online, using remote servers maintained by a
+                        third-party provider, rather than on a local device like a hard drive. It allows users to access their files from any
+                        internet-connected device, offering flexibility and scalability. Think of it as renting storage space on someone else's
+                        <code>computer network</code>, rather than owning and managing your own.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                        Item #2
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Cloud Storage</strong> is a way to store digital data online, using remote servers maintained by a
+                        third-party provider, rather than on a local device like a hard drive. It allows users to access their files from any
+                        internet-connected device, offering flexibility and scalability. Think of it as renting storage space on someone else's
+                        <code>computer network</code>, rather than owning and managing your own.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                        Item #3
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Cloud Storage</strong> is a way to store digital data online, using remote servers maintained by a
+                        third-party provider, rather than on a local device like a hard drive. It allows users to access their files from any
+                        internet-connected device, offering flexibility and scalability. Think of it as renting storage space on someone else's
+                        <code>computer network</code>, rather than owning and managing your own.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="h-100 p-3 my-3 bg-body-tertiary border rounded-3 text-center" style="margin-top: 60px !important;">
+            <h3 class=""><b>Our Amazing Team</b></h3>
+            <div class="row g-3 my-4">
+                <div class="col-lg-3 team_order">
+                    <div style="width: 165px; height: 165px;
+                                border-radius: 100%; display: flex; justify-content: center; align-items: center;"
+                         class="bg-body-secondary border">
+                        <div class="card timeline-image"
+                             style="padding: 0.25rem; border-radius: 100%;
+                                width: 150px; height: 150px;
+                                background-image: url({% static 'img/owl/apple_smartwatch.jpg' %});">
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3>Jayden Steve</h3>
+                        <p class="text-muted">Director</p>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 team_order">
+                    <div style="width: 165px; height: 165px;
+                                border-radius: 100%; display: flex; justify-content: center; align-items: center;"
+                         class="bg-body-secondary border">
+                        <div class="card timeline-image"
+                             style="padding: 0.25rem; border-radius: 100%;
+                                width: 150px; height: 150px;
+                                background-image: url({% static 'img/owl/apple_smartwatch.jpg' %});">
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3>Steve W</h3>
+                        <p class="text-muted">UX Designer</p>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 team_order">
+                    <div style="width: 165px; height: 165px;
+                                border-radius: 100%; display: flex; justify-content: center; align-items: center;"
+                         class="bg-body-secondary border">
+                        <div class="card timeline-image"
+                             style="padding: 0.25rem; border-radius: 100%;
+                                width: 150px; height: 150px;
+                                background-image: url({% static 'img/owl/apple_smartwatch.jpg' %});">
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3>Josh M</h3>
+                        <p class="text-muted">Lead Developer</p>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 team_order">
+                    <div style="width: 165px; height: 165px;
+                                border-radius: 100%; display: flex; justify-content: center; align-items: center;"
+                         class="bg-body-secondary border">
+                        <div class="card timeline-image"
+                             style="padding: 0.25rem; border-radius: 100%;
+                                width: 150px; height: 150px;
+                                background-image: url({% static 'img/owl/apple_smartwatch.jpg' %});">
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3>John Doe</h3>
+                        <p class="text-muted">Event Organizer</p>
+                    </div>
+
+                </div>
+            </div>
+            <p style="font-size: 18px;">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam
+                corporis ea, alias ut unde.
+            </p>
+        </div>
+
+        <section class="page-section my-4" id="about">
+            <div class="container">
+                <div class="text-center my-4">
+                    <!--                    <h2 class="section-heading text-uppercase">About</h2>-->
+                    <h3 class="section-subheading text-muted">Track Mind History.</h3>
+                </div>
+
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"
+                             style="background-image: url({% static 'img/owl/apple_smartwatch.jpg' %});">
+                            <!--                            <img class="rounded-circle img-fluid" src="{% static 'img/owl/apple_smartwatch.jpg' %}" alt="...">-->
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>2009-2011</h4>
+                                <h4 class="subheading">Our Humble Beginnings</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
+                                voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea
+                                quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"
+                             style="background-image: url({% static 'img/owl/apple_smartwatch.jpg' %});">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>March 2011</h4>
+                                <h4 class="subheading">An Agency is Born</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
+                                voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea
+                                quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"
+                             style="background-image: url({% static 'img/owl/apple_smartwatch.jpg' %});">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>December 2015</h4>
+                                <h4 class="subheading">Transition to Full Service</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
+                                voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea
+                                quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"
+                             style="background-image: url({% static 'img/owl/apple_smartwatch.jpg' %});">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>July 2020</h4>
+                                <h4 class="subheading">Phase Two Expansion</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut
+                                voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea
+                                quo dolore laudantium consectetur!</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                Be Part
+                                <br>
+                                Of Our
+                                <br>
+                                Story!
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<script src="{% static 'js/jquery-3.7.1.js' %}"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:2
+          },
+          1000:{
+              items:2
+          }
+      }
+    })
+</script>
+
+{% endblock content %}

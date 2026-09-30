@@ -1,0 +1,277 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<main>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex justify-content-center align-items-center">
+        <!-- Background video -->
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="https://videos.pexels.com/video-files/5949379/5949379-hd_1920_1080_24fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Optional overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Content container -->
+        <div class="container text-center text-white z-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-animate="fadeInLeft">
+                    <img src="{% static 'assets/img/dots-light.svg' %}" alt="Dots"
+                         class="position-absolute top-0 start-0 translate-middle-y dots-img">
+
+                    <h1 class="fw-bold hero-title fst-italic">Welcome To <br> TrackMind</h1>
+
+                    <div style="max-width: 500px; margin: 0 auto;">
+                        <p class="hero-subtitle mb-4 fst-italic">
+                            A next-generation Christian media organization dedicated to reshaping culture through faith-centered digital content,
+                            youth empowerment, and theological storytelling.
+                        </p>
+                    </div>
+
+                    <a href="{% url 'home' %}" class="btn btn-gold me-3">Shop Now</a>
+                    <a href="#" class="btn btn-outline-light">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Event -->
+    <section class="why-choose-us py-5 my-3">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- Text & Features -->
+                <div class="col-lg-6" data-animate="fadeInUp">
+                    <h2 class="fw-bold mb-3 fst-italic">Upcoming Event</h2>
+                    <p class="text-muted mb-5">
+                        Be part of an inspiring evening of worship, creative storytelling, and powerful conversations as we launch our next
+                        chapter in Christian media and youth empowerment.
+                    </p>
+
+                    <div class="row gy-4">
+                        <!-- Feature 1: Event Date & Time -->
+                        <div class="col-md-6 d-flex">
+                            <div class="icon-wrapper me-3 text-primary">
+                                <i class="bi bi-calendar-check fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Event Schedule</h6>
+                                <p class="text-muted small mb-0">{{ first_event.date|date:"F j, Y" }} |b{{ first_event.start_time|time:"g:i A" }}.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2: Purpose -->
+                        <div class="col-md-6 d-flex">
+                            <div class="icon-wrapper me-3 text-success">
+                                <i class="bi bi-camera-reels fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Live Film Screening</h6>
+                                <p class="text-muted small mb-0">Premiere of our latest short film exploring faith in modern culture.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3: Youth Empowerment -->
+                        <div class="col-md-6 d-flex">
+                            <div class="icon-wrapper me-3 text-warning">
+                                <i class="bi bi-lightbulb fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Youth Impact Panel</h6>
+                                <p class="text-muted small mb-0">Hear from young Christian leaders reshaping the narrative.</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4: Worship & Fellowship -->
+                        <div class="col-md-6 d-flex">
+                            <div class="icon-wrapper me-3 text-danger">
+                                <i class="bi bi-music-note-beamed fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Worship Experience</h6>
+                                <p class="text-muted small mb-0">Join us in a live worship set with guest artists and prayer moments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Image with Dots -->
+                <div class="col-lg-6 position-relative mt-5 mt-lg-0" data-animate="fadeInUp">
+                    <!-- Dots background -->
+                    <img src="{% static 'assets/img/dots-green.svg' %}" alt="Dots"
+                         class="position-absolute top-0 start-0 translate-middle-y dots-img">
+
+                    <!-- Main Image -->
+                    <img src="{% static 'img/owl/laptop.jpg' %}" alt="Why Choose Us"
+                         class="img-fluid shadow-lg rounded-4 position-relative z-1">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Parallax Section -->
+    <div class="jarallax mt-3 d-flex align-items-center justify-content-center text-center text-white"
+         data-jarallax
+         style="background-image: url('{% static 'img/owl/chains.jpg' %}'); height: 280px; position: relative;">
+
+        <!-- Overlay for dark effect -->
+        <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+                background-color: rgba(0, 0, 0, 0.4); z-index: 1;"></div>
+
+        <!-- Content -->
+        <div style="position: relative; z-index: 2;" class="">
+
+            <h1 style="margin: 0; font-size: 2.5rem; font-weight: bold; color: #fff;" class="display-4 fst-italic">
+                Ready For TheNext Event?
+            </h1>
+
+            <h3 style="margin: 0; font-size: 1rem; color: #fff;">
+                We Are Counting Down!
+            </h3>
+
+
+            <!-- Event Countdown -->
+            <div class="mb-3">
+                {% if event_datetime %}
+                <div id="countdown" class="d-flex justify-content-center gap-4 text-white mt-1">
+                    <div class="text-center">
+                        <h2 id="days">0</h2>
+                        <small>Days</small>
+                    </div>
+                    <div class="text-center">
+                        <h2 id="hours">0</h2>
+                        <small>Hours</small>
+                    </div>
+                    <div class="text-center">
+                        <h2 id="minutes">0</h2>
+                        <small>Minutes</small>
+                    </div>
+                    <div class="text-center">
+                        <h2 id="seconds">0</h2>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+
+                <script>
+                    // Convert Django datetime into JavaScript format
+                    const eventDate = new Date("{{ event_datetime|date:'Y-m-d H:i:s' }}");
+
+                    function updateCountdown() {
+                        const now = new Date();
+                        const timeLeft = eventDate - now;
+
+                        if (timeLeft <= 0) {
+                            document.getElementById('countdown').innerHTML = "<h2>Event Started!</h2>";
+                            return;
+                        }
+
+                        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+                        const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+                        const seconds = Math.floor((timeLeft / 1000) % 60);
+
+                        document.getElementById('days').textContent = days;
+                        document.getElementById('hours').textContent = hours;
+                        document.getElementById('minutes').textContent = minutes;
+                        document.getElementById('seconds').textContent = seconds;
+                    }
+
+                    setInterval(updateCountdown, 1000);
+                    updateCountdown();
+                </script>
+                {% endif %}
+
+            </div>
+
+            <a href="{% url 'home' %}">
+                <div class="mt-3">
+                    <div class="btn btn-one rounded">
+                        <span>REGISTER NOW!</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <!--    <div class="jarallax mt-2" data-jarallax data-video-src="https://youtu.be/mru3Q5m4lkY" style="height: 240px;"></div>-->
+
+
+    <!-- Blog Section -->
+    <section class="blog-section pt-5">
+        <div class="container">
+
+            <!-- Section Heading -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold fst-italic">Recent Posts</h2>
+                <a href="{% url 'home' %}"
+                   class="btn cart_btn btn-sm fw-semibold d-flex align-items-center gap-1 shadow-md ">
+                    View All Posts
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+
+            <!-- Blog Posts -->
+            <div class="row g-4">
+
+                <!-- Blog Card 1 -->
+                {% for post in blog_posts %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="blog-card">
+                        <a href="{{ post.get_absolute_url }}">
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}"
+                                 class="img-fluid shadow-md rounded-4 position-relative z-1 mb-3 w-100">
+                        </a>
+                        <h6 class="fw-semibold mb-1">{{ post.title }}</h6>
+                        <p class="text-muted small mb-0">
+                            by <span class="text-primary fw-semibold">{{ post.author.first_name }}</span> on
+                            <span class="fw-semibold">{{ post.created_at|date:"M d, Y" }}</span>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+
+<script src="{% static 'js/jquery-3.7.1.js' %}"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      autoplay: true,
+      autoplayTimeout: 3500,
+      smartSpeed: 800,
+      responsiveClass: true,
+      // nav:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:2
+          },
+          1000:{
+              items:3
+          }
+      }
+    })
+</script>
+
+{% endblock content %}
